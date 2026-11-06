@@ -1,0 +1,9 @@
+# Copy to rules.yaml, then set RULES_FILE=./rules.yaml in .env.
+# Any value you leave out uses the built-in default shown here.
+max_pauses_per_run: 2        # never pause more than this many ads per check
+
+rule:
+  spend_threshold: 0         # only judge ads that spent MORE than this (ad account currency)
+  min_link_clicks: 1         # pause if FEWER than this many link clicks in the window
+  window_hours: 24           # look at the last N hours of data
+  min_ad_age_hours: 24       # ignore ads younger than this

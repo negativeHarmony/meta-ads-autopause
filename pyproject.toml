@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meta-ads-autopause"
+version = "0.1.0"
+description = "Automatically pause Meta ads that spend without getting clicks. Use it as a CLI or an MCP server."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+dependencies = [
+    "facebook-business",
+    "mcp>=2",
+    "python-dotenv",    
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+meta-ads-autopause = "meta_ads_autopause.cli:main"
+meta-ads-autopause-mcp = "meta_ads_autopause.mcp_server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
